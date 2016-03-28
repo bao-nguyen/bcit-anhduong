@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+        <id>Cập nhật menu admin</id>
+        <version>1.0.1</version>
+        <vqmver>2.4.1</vqmver>
+        <author>BCIT Solutions</author>
+        
+		<file name="admin/language/english/common/menu.php">
+                <operation>                
+                        <search position="bottom"><![CDATA[$_['text_category']                    = 'Categories';]]></search>                        
+                        <add><![CDATA[
+						$_['text_cat']                    = 'Categories News';
+						$_['text_news']                     	= 'News';
+						$_['text_viewpdf']                    = 'PDF view';
+                        $_['text_form']                    = 'Form';
+                        $_['text_menu']                    = 'Menu';		
+                        $_['text_feel']                    = 'Feel';
+                        $_['text_photo']                    = 'Photo album';				
+						]]></add>
+                </operation>
+        </file> 
+		
+		<file name="admin/controller/common/menu.php">
+                <operation>                
+                        <search position="after"><![CDATA[$this->load->language('common/menu');]]></search>                        
+                        <add><![CDATA[                        
+						$data['text_cat'] = $this->language->get('text_cat');
+						$data['text_news'] = $this->language->get('text_news');
+						$data['text_viewpdf'] = $this->language->get('text_viewpdf');			
+                        $data['text_form'] = $this->language->get('text_form');
+						$data['text_menu'] = $this->language->get('text_menu');
+                        $data['text_feel'] = $this->language->get('text_feel'); 
+                        $data['text_photo'] = $this->language->get('text_photo');  
+            				
+                        $data['photo'] = $this->url->link('design/photo', 'token=' . $this->session->data['token'], 'SSL');				
+                        $data['feel'] = $this->url->link('catalog/feel', 'token=' . $this->session->data['token'], 'SSL');				
+                        $data['menu'] = $this->url->link('catalog/menu', 'token=' . $this->session->data['token'], 'SSL');
+                        $data['cat'] = $this->url->link('catalog/ncategory', 'token=' . $this->session->data['token'], 'SSL');
+						$data['news'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'], 'SSL');
+						$data['viewpdf'] = $this->url->link('catalog/viewpdf', 'token=' . $this->session->data['token'], 'SSL');
+                        $data['form'] = $this->url->link('catalog/form', 'token=' . $this->session->data['token'], 'SSL');
+						]]></add>
+                </operation>
+        </file>				
+					
+		<file name="admin/view/template/common/menu.tpl">
+                <operation>                
+                        <search position="before"><![CDATA[<li id="catalog"><a class="parent"><i class="fa fa-tags fa-fw"></i> <span><?php echo $text_catalog; ?></span></a>]]></search>                        
+                        <add><![CDATA[
+                        <li id="menu"><a href="<?php echo $menu; ?>"><i class="fa fa-bars fa-fw"></i><span><?php echo $text_menu; ?></span></a></li>
+						</li>
+						<li id="news"><a class="parent"><i class="fa fa-newspaper-o fa-fw"></i> <span><?php echo $text_news; ?></span></a>
+							<ul>
+								<li><a href="<?php echo $cat; ?>"><?php echo $text_cat; ?></a></li>
+								<li><a href="<?php echo $news; ?>"><?php echo $text_news; ?></a></li>
+								<li><a href="<?php echo $viewpdf; ?>"><?php echo $text_viewpdf; ?></a></li>
+                                <li><a href="<?php echo $form; ?>"><?php echo $text_form; ?></a></li>
+							</ul>
+						</li>		   				
+                        <li id="feel"><a href="<?php echo $feel; ?>"><i class="fa fa-quote-right fa-fw"></i><span><?php echo $text_feel; ?></span></a></li>
+                        <li id="photo"><a href="<?php echo $photo; ?>"><i class="fa fa-picture-o fa-fw"></i><span><?php echo $text_photo; ?></span></a></li>
+						]]></add>
+                </operation>				
+        </file>
+</modification> 

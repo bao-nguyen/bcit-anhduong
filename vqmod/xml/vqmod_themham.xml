@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+        <id>Thêm hàm BCIT dowload</id>
+        <version>1.0.0</version>
+        <vqmver>2.4.1</vqmver>
+        <author>BCIT Solutions</author>
+        
+		<file name="catalog/model/account/download.php">
+                <operation>                
+                        <search position="before"><![CDATA[public function getTotalDownloads() {]]></search>                        
+                        <add><![CDATA[
+						
+						]]></add>
+                </operation>
+        </file>
+</modification> 

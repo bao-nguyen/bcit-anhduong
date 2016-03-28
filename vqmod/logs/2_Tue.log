@@ -1,0 +1,13 @@
+---------- Date: 2016-03-15 08:25:25 ~ IP : ::1 ----------
+REQUEST URI : /upload/index.php?route=photo/category
+MOD DETAILS:
+   modFile   : E:\wamp\www\upload\vqmod/xml/vqmod_ThemGiaoDien.xml
+   id        : Thêm các vị trí trong giao diện
+   version   : 1.0.0
+   vqmver    : 2.4.1
+   author    : BCIT Solutions
+VQModObject::parseMods - Could not resolve path for [catalog/controller/common/success.php] (SKIPPED)
+
+----------------------------------------------------------------------
+
+
