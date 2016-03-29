@@ -173,12 +173,7 @@
                     <option value="content3_left" selected="selected"><?php echo $text_content3_left; ?></option>
                     <?php } else { ?>
                     <option value="content3_left"><?php echo $text_content3_left; ?></option>
-                    <?php } ?>
-                    <?php if ($layout_module['position'] == 'content3c') { ?>
-                    <option value="content3c" selected="selected"><?php echo $text_content3_center; ?></option>
-                    <?php } else { ?>
-                    <option value="content3c"><?php echo $text_content3_center; ?></option>
-                    <?php } ?>
+                    <?php } ?>                    
                     <?php if ($layout_module['position'] == 'content3_right') { ?>
                     <option value="content3_right" selected="selected"><?php echo $text_content3_right; ?></option>
                     <?php } else { ?>
@@ -257,8 +252,7 @@ function addModule() {
     html += '    <option value="content2_left"><?php echo $text_content2_left; ?></option>';    
     html += '    <option value="content2_right"><?php echo $text_content2_right; ?></option>';  
     
-    html += '    <option value="content3_left"><?php echo $text_content3_left; ?></option>';
-    html += '    <option value="content3c"><?php echo $text_content3_center; ?></option>';
+    html += '    <option value="content3_left"><?php echo $text_content3_left; ?></option>';    
     html += '    <option value="content3_right"><?php echo $text_content3_right; ?></option>';  
     
     html += '  </select></td>';

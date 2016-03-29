@@ -106,7 +106,24 @@ class ControllerCommonMenu extends Controller {
 		$data['text_openbay_links'] = $this->language->get('text_openbay_links');
 		$data['text_openbay_report_price'] = $this->language->get('text_openbay_report_price');
 		$data['text_openbay_order_import'] = $this->language->get('text_openbay_order_import');
+        
+        $data['text_cat'] = $this->language->get('text_cat');
+						$data['text_news'] = $this->language->get('text_news');
+						$data['text_viewpdf'] = $this->language->get('text_viewpdf');			
+                        $data['text_form'] = $this->language->get('text_form');
+						$data['text_menu'] = $this->language->get('text_menu');
+                        $data['text_feel'] = $this->language->get('text_feel'); 
+                        $data['text_photo'] = $this->language->get('text_photo');  
 
+
+        $data['photo'] = $this->url->link('design/photo', 'token=' . $this->session->data['token'], 'SSL');				
+                        $data['feel'] = $this->url->link('catalog/feel', 'token=' . $this->session->data['token'], 'SSL');				
+                        $data['menu'] = $this->url->link('catalog/menu', 'token=' . $this->session->data['token'], 'SSL');
+                        $data['cat'] = $this->url->link('catalog/ncategory', 'token=' . $this->session->data['token'], 'SSL');
+						$data['news'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'], 'SSL');
+						$data['viewpdf'] = $this->url->link('catalog/viewpdf', 'token=' . $this->session->data['token'], 'SSL');
+                        $data['form'] = $this->url->link('catalog/form', 'token=' . $this->session->data['token'], 'SSL');
+                        
 		$data['analytics'] = $this->url->link('extension/analytics', 'token=' . $this->session->data['token'], 'SSL');
 		$data['home'] = $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL');
 		$data['affiliate'] = $this->url->link('marketing/affiliate', 'token=' . $this->session->data['token'], 'SSL');

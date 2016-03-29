@@ -267,6 +267,20 @@ class ControllerDesignLayout extends Controller {
 		$data['text_content_bottom'] = $this->language->get('text_content_bottom');
 		$data['text_column_left'] = $this->language->get('text_column_left');
 		$data['text_column_right'] = $this->language->get('text_column_right');
+        
+        $data['text_banner'] = $this->language->get('text_banner');
+		$data['text_logo'] = $this->language->get('text_logo');
+		$data['text_menu'] = $this->language->get('text_menu');
+                        
+        $data['text_content1_left'] = $this->language->get('text_content1_left');
+        $data['text_content1_center'] = $this->language->get('text_content1_center');
+        $data['text_content1_right'] = $this->language->get('text_content1_right');
+                        
+        $data['text_content2_left'] = $this->language->get('text_content2_left');                        
+        $data['text_content2_right'] = $this->language->get('text_content2_right');
+                        
+        $data['text_content3_left'] = $this->language->get('text_content3_left');        
+        $data['text_content3_right'] = $this->language->get('text_content3_right');
 
 		$data['entry_name'] = $this->language->get('entry_name');
 		$data['entry_store'] = $this->language->get('entry_store');
