@@ -6,11 +6,13 @@
             <li><a href="<?php echo $cat; ?>"><?php echo $text_cat; ?></a></li>
             <li><a href="<?php echo $news; ?>"><?php echo $text_news; ?></a></li>
             <li><a href="<?php echo $viewpdf; ?>"><?php echo $text_viewpdf; ?></a></li>
-            <li><a href="<?php echo $form; ?>"><?php echo $text_form; ?></a></li>
+            
         </ul>
     </li>		   
     <li id="page"><a href="<?php echo $information; ?>"><i class="fa fa-info fa-fw"></i><span><?php echo $text_information; ?></span></a></li>				
     <li id="feel"><a href="<?php echo $feel; ?>"><i class="fa fa-quote-right fa-fw"></i><span><?php echo $text_feel; ?></span></a></li>
+    <li id="page"><a href="<?php echo $form; ?>"><i class="fa fa-file fa-fw"></i><span><?php echo $text_form; ?></span></a></li>
     <li id="photo"><a href="<?php echo $photo; ?>"><i class="fa fa-picture-o fa-fw"></i><span><?php echo $text_photo; ?></span></a></li>
     <li id="design"><a href="<?php echo $banner; ?>"><i class="fa fa-television fa-fw"></i><span><?php echo $text_banner; ?></span></a></li>
+    <li id="contact"><a href="<?php echo $contact1; ?>"><i class="fa fa-envelope fa-fw"></i><span><?php echo $text_contact1; ?></span></a></li>
 </ul>

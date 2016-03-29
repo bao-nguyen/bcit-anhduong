@@ -114,6 +114,7 @@ class ControllerCommonMenu extends Controller {
 						$data['text_menu'] = $this->language->get('text_menu');
                         $data['text_feel'] = $this->language->get('text_feel'); 
                         $data['text_photo'] = $this->language->get('text_photo');  
+                        $data['text_contact1'] = $this->language->get('text_contact');
 
 
         $data['photo'] = $this->url->link('design/photo', 'token=' . $this->session->data['token'], 'SSL');				
@@ -123,6 +124,7 @@ class ControllerCommonMenu extends Controller {
 						$data['news'] = $this->url->link('catalog/news', 'token=' . $this->session->data['token'], 'SSL');
 						$data['viewpdf'] = $this->url->link('catalog/viewpdf', 'token=' . $this->session->data['token'], 'SSL');
                         $data['form'] = $this->url->link('catalog/form', 'token=' . $this->session->data['token'], 'SSL');
+                        $data['contact1'] = $this->url->link('catalog/contact', 'token=' . $this->session->data['token'], 'SSL');
                         
 		$data['analytics'] = $this->url->link('extension/analytics', 'token=' . $this->session->data['token'], 'SSL');
 		$data['home'] = $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL');
