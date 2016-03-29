@@ -66,6 +66,15 @@
             </div>
           </div>
           <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-layout"><?php echo $entry_layout; ?></label>
+            <div class="col-sm-10">
+              <input type="text" name="layout" value="<?php echo $layout; ?>" placeholder="<?php echo $entry_layout; ?>" id="input-height" class="form-control" />
+              <?php if ($error_layout) { ?>
+              <div class="text-danger"><?php echo $error_layout; ?></div>
+              <?php } ?>
+            </div>
+          </div>
+          <div class="form-group">
             <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_status; ?></label>
             <div class="col-sm-10">
               <select name="status" id="input-status" class="form-control">

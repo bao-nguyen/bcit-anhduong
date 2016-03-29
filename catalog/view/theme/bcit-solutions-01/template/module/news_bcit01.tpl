@@ -4,9 +4,10 @@
 
 
 <div id="bcit-news-bycategory">
+<?php $mau = 0; ?>
 <?php foreach ($newss as $news) { ?>
    <a href="<?php echo $news['href']; ?>">
-    <div class="col-xs-12 course-item">
+    <div class="col-xs-12 course-item color<?php echo $mau; ?>">
         <div class="col-xs-8">            
             <div class="text-course">
                 <?php echo $news['name']; ?>
@@ -20,6 +21,7 @@
     
     </div>
     </a>
+    <?php $mau++; ?>
 <?php } ?>
 
 </div>

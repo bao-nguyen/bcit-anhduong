@@ -86,8 +86,8 @@ class ControllerModuleLatestByCategory extends Controller {
             
             $data['module'] = $module++;
             
-            if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/latest_by_category.tpl')) {
-				return $this->load->view($this->config->get('config_template') . '/template/module/latest_by_category.tpl', $data);
+            if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/'.$setting['layout'].'.tpl')) {
+				return $this->load->view($this->config->get('config_template') . '/template/module/'.$setting['layout'].'.tpl', $data);
 			} else {
 				return $this->load->view('default/template/module/latest_by_category.tpl', $data);
 			}

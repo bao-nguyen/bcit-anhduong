@@ -35,6 +35,7 @@ class ControllerModuleLatestByCategory extends Controller {
 		$data['entry_limit'] = $this->language->get('entry_limit');
 		$data['entry_width'] = $this->language->get('entry_width');
 		$data['entry_height'] = $this->language->get('entry_height');
+        $data['entry_layout'] = $this->language->get('entry_layout');
 		$data['entry_status'] = $this->language->get('entry_status');
 
 		$data['button_save'] = $this->language->get('button_save');
@@ -64,6 +65,12 @@ class ControllerModuleLatestByCategory extends Controller {
 			$data['error_height'] = $this->error['height'];
 		} else {
 			$data['error_height'] = '';
+		}
+        
+        if (isset($this->error['layout'])) {
+			$data['error_layout'] = $this->error['layout'];
+		} else {
+			$data['error_layout'] = '';
 		}
 
 		$data['breadcrumbs'] = array();
@@ -150,6 +157,14 @@ class ControllerModuleLatestByCategory extends Controller {
 			$data['height'] = 200;
 		}		
 		
+        if (isset($this->request->post['layout'])) {
+			$data['layout'] = $this->request->post['layout'];
+		} elseif (!empty($module_info)) {
+			$data['layout'] = $module_info['layout'];
+		} else {
+			$data['layout'] = "latest_by_category";
+		}
+        
 		if (isset($this->request->post['status'])) {
 			$data['status'] = $this->request->post['status'];
 		} elseif (!empty($module_info)) {
@@ -180,6 +195,10 @@ class ControllerModuleLatestByCategory extends Controller {
 		
 		if (!$this->request->post['height']) {
 			$this->error['height'] = $this->language->get('error_height');
+		}
+        
+        if (!$this->request->post['layout']) {
+			$this->error['layout'] = $this->language->get('error_layout');
 		}
 
 		return !$this->error;

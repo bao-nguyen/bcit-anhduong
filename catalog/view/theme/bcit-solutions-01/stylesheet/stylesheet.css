@@ -785,6 +785,14 @@ footer,
 .block-item hr {
     color: #3498db !important;  
 }
+
+.color0 {
+    background:#33CC99 url('../image/bg-trans-top.png') no-repeat right top; 
+}
+
+.color1 {
+    background:#3498db url('../image/bg-trans-top.png') no-repeat right top; 
+}
 /* End Color */
 
 .clear-padd-marg {
@@ -913,8 +921,7 @@ nav .btn {
 }
 
 
-.course-item {
-    background:#3498db url('../image/bg-trans-top.png') no-repeat right top; 
+.course-item {    
     margin-top:5px;
 }
 
