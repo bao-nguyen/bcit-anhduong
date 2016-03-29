@@ -1,35 +1,15 @@
 <footer>
   <div class="container">
     <div class="row" style="padding: 10px">      
-      <div class="col-sm-4 text-center">
-      
-      <div class="row" style="width:15%; margin-left:auto; margin-right:auto">
-            <img class="img-responsive img-center" src="image/map/logo.png"/>
-        </div>
+      <div class="col-sm-12 text-center">                  
         <div class="row" style="">
             <h5><?php echo $store; ?></h5>
         <?php echo $text_address; ?><br />
         <?php echo $text_telephone; ?>
         </div>
         
-      </div>
-      <div class="col-sm-4 text-center">
-        <div class="row" >
-            <img class="img-responsive img-center" src="image/map/bando.png"/>
-        </div>
-      </div>
-      <div class="col-sm-4 text-center">
-        <div class="row" >
-            <div class="fb-page"                 
-                data-href="https://www.facebook.com/Trung-tâm-Ngoại-ngữ-Ánh-Dương-Anh-Duong-Language-Center-203133863383707"
-                data-width="340" 
-                data-hide-cover="false"
-                data-show-facepile="true" 
-                data-show-posts="false"
-                >
-                
-            </div>
-        </div>  
+
+      
          
       </div>   
     </div>
