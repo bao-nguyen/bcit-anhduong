@@ -26,6 +26,9 @@
             <?php echo $bcit_content2_left; ?>
             <?php echo $bcit_content2_right; ?>
             
+            <?php echo $bcit_content3_left; ?>
+            <?php echo $bcit_content3_right; ?>
+            
             <?php echo $content_bottom; ?>
         </div>
         <?php echo $column_right; ?>
