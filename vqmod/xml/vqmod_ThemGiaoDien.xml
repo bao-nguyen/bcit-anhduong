@@ -16,7 +16,9 @@
 						$data['bcit_footer'] = $this->load->controller('common/bcit_footer');
                                                 
                         $data['bcit_content2_left'] = $this->load->controller('common/bcit_content2_left');
-                        $data['bcit_content2_right'] = $this->load->controller('common/bcit_content2_right');                                                
+                        $data['bcit_content2_right'] = $this->load->controller('common/bcit_content2_right'); 
+                        $data['bcit_content3_left'] = $this->load->controller('common/bcit_content3_left');
+                        $data['bcit_content3_right'] = $this->load->controller('common/bcit_content3_right');                                                
                         
 						]]></add>
                 </operation>
