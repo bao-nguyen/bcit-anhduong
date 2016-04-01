@@ -21,7 +21,7 @@ $_['text_loading']          = 'Loading...';
 // Buttons
 $_['button_address_add']    = 'Add Address';
 $_['button_back']           = 'Back';
-$_['button_continue']       = 'Continue';
+$_['button_continue']       = 'Tiếp tục';
 $_['button_cart']           = 'Add to Cart';
 $_['button_cancel']         = 'Cancel';
 $_['button_compare']        = 'Compare this Product';
@@ -43,7 +43,7 @@ $_['button_remove']         = 'Remove';
 $_['button_reorder']        = 'Reorder';
 $_['button_return']         = 'Return';
 $_['button_shopping']       = 'Continue Shopping';
-$_['button_search']         = 'Search';
+$_['button_search']         = 'Tìm kiếm';
 $_['button_shipping']       = 'Apply Shipping';
 $_['button_submit']         = 'Submit';
 $_['button_guest']          = 'Guest Checkout';

@@ -115,7 +115,7 @@ class ModelCatalognews extends Model {
 				}
 
 				if (!empty($data['filter_description'])) {
-					$sql .= " OR pd.description LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
+					$sql .= " OR pd.content LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
 				}
 			}
 
@@ -458,7 +458,7 @@ class ModelCatalognews extends Model {
 				}
 
 				if (!empty($data['filter_description'])) {
-					$sql .= " OR pd.description LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
+					$sql .= " OR pd.content LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
 				}
 			}
 
