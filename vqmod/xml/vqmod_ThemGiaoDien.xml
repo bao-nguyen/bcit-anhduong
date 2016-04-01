@@ -14,6 +14,7 @@
 						$data['bcit_banner'] = $this->load->controller('common/bcit_banner');
 						$data['bcit_menu'] = $this->load->controller('common/bcit_menu');
 						$data['bcit_footer'] = $this->load->controller('common/bcit_footer');
+                        $data['bcit_footer1'] = $this->load->controller('common/bcit_footer1');
                                                 
                         $data['bcit_content2_left'] = $this->load->controller('common/bcit_content2_left');
                         $data['bcit_content2_right'] = $this->load->controller('common/bcit_content2_right'); 
