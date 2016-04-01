@@ -47,7 +47,7 @@ class ControllerPhotoPhoto extends Controller {
             $this->load->model('tool/image');
             foreach ($photo_images as $photo_image) {
                 if (is_file(DIR_IMAGE . $photo_image['image'])) {
-				    $image = DIR_IMAGE .$photo_image['image'];
+				    $image = DIR_IMAGE1 . $photo_image['image'];
 				    $thumb = $photo_image['image'];
 			     } else {
 				    $image = '';

@@ -15,4 +15,14 @@
     <li id="photo"><a href="<?php echo $photo; ?>"><i class="fa fa-picture-o fa-fw"></i><span><?php echo $text_photo; ?></span></a></li>
     <li id="design"><a href="<?php echo $banner; ?>"><i class="fa fa-television fa-fw"></i><span><?php echo $text_banner; ?></span></a></li>
     <li id="contact"><a href="<?php echo $contact1; ?>"><i class="fa fa-envelope fa-fw"></i><span><?php echo $text_contact1; ?></span></a></li>
+	
+	<li id="system"><a class="parent"><i class="fa fa-cog fa-fw"></i> <span><?php echo $text_system; ?></span></a>
+		<ul>
+			<li><a href="<?php echo $setting; ?>"><?php echo $text_setting; ?></a></li>
+			<li><a class="parent"><?php echo $text_users; ?></a>
+        <ul>
+          <li><a href="<?php echo $user; ?>"><?php echo $text_user; ?></a></li>
+          <li><a href="<?php echo $user_group; ?>"><?php echo $text_user_group; ?></a></li>          
+        
+    </li>      
 </ul>
