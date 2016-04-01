@@ -209,6 +209,7 @@ class Controllernewsnews extends Controller {
 				$url .= '&limit=' . $this->request->get['limit'];
 			}
 
+            $data['share_fb'] = $this->url->linkShare('news/news', $url . '&news_id=' . $this->request->get['news_id']);
 			$data['breadcrumbs'][] = array(
 				'text' => $news_info['name'],
 				'href' => $this->url->link('news/news', $url . '&news_id=' . $this->request->get['news_id'])

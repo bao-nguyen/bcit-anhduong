@@ -33,7 +33,10 @@
             
             
             
-            <h1><?php echo $heading_title; ?></h1>                             
+            <h1><?php echo $heading_title; ?></h1>     
+           
+            <div class="fb-share-button" data-href="<?php echo($share_fb); ?>" data-layout="button"></div>   
+            <br /><br />                   
             <?php echo $content; ?>                        
             
             <?php if ($downloads) { ?>

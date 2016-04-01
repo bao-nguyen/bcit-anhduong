@@ -36,4 +36,20 @@ class Url {
 
 		return $url;
 	}
+    public function linkShare($route, $args = '', $secure = false) {
+		if (!$secure) {
+			$url = $this->domain;
+		} else {
+			$url = $this->ssl;
+		}
+
+		$url .= 'index.php?route=' . $route . $args;
+
+		
+		foreach ($this->rewrite as $rewrite) {
+			$url = $rewrite->rewrite($url);
+		}
+
+		return $url;
+	}
 }
