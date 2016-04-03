@@ -99,5 +99,18 @@
                         $data['text_content3_right'] = $this->language->get('text_content3_right');
 						]]></add>
                 </operation>
-        </file>        
+        </file>  
+        
+        <file name="catalog/controller/error/not_found.php">
+                <operation>                
+                        <search position="after"><![CDATA[$data['header'] = $this->load->controller('common/header');]]></search>                        
+                        <add><![CDATA[
+						$data['bcit_header'] = $this->load->controller('common/bcit_header');
+						$data['bcit_logo'] = $this->load->controller('common/bcit_logo');
+						$data['bcit_banner'] = $this->load->controller('common/bcit_banner');
+						$data['bcit_menu'] = $this->load->controller('common/bcit_menu');
+						$data['bcit_footer'] = $this->load->controller('common/bcit_footer');
+						]]></add>
+                </operation>
+        </file>      
 </modification> 
