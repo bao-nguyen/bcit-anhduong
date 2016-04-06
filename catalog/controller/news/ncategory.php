@@ -46,7 +46,7 @@ class Controllernewsncategory extends Controller {
 			'href' => $this->url->link('common/home')
 		);
 
-		if (isset($this->request->get['path'])) {
+		if (isset($this->request->get['npath'])) {
 			$url = '';
 
 			if (isset($this->request->get['sort'])) {
@@ -61,25 +61,25 @@ class Controllernewsncategory extends Controller {
 				$url .= '&limit=' . $this->request->get['limit'];
 			}
 
-			$path = '';
+			$npath = '';
 
-			$parts = explode('_', (string)$this->request->get['path']);
+			$parts = explode('_', (string)$this->request->get['npath']);
 
 			$ncategory_id = (int)array_pop($parts);
 
-			foreach ($parts as $path_id) {
-				if (!$path) {
-					$path = (int)$path_id;
+			foreach ($parts as $npath_id) {
+				if (!$npath) {
+					$npath = (int)$npath_id;
 				} else {
-					$path .= '_' . (int)$path_id;
+					$npath .= '_' . (int)$npath_id;
 				}
 
-				$ncategory_info = $this->model_catalog_ncategory->getncategory($path_id);
+				$ncategory_info = $this->model_catalog_ncategory->getncategory($npath_id);
 
 				if ($ncategory_info) {
 					$data['breadcrumbs'][] = array(
 						'text' => $ncategory_info['name'],
-						'href' => $this->url->link('news/ncategory', 'path=' . $path . $url)
+						'href' => $this->url->link('news/ncategory', 'npath=' . $npath . $url)
 					);
 				}
 			}
@@ -118,7 +118,7 @@ class Controllernewsncategory extends Controller {
 			// Set the last ncategory breadcrumb
 			$data['breadcrumbs'][] = array(
 				'text' => $ncategory_info['name'],
-				'href' => $this->url->link('news/ncategory', 'path=' . $this->request->get['path'])
+				'href' => $this->url->link('news/ncategory', 'npath=' . $this->request->get['npath'])
 			);
 
 			if ($ncategory_info['image']) {
@@ -160,7 +160,7 @@ class Controllernewsncategory extends Controller {
 
 				$data['categories'][] = array(
 					'name' => $result['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_news->getTotalnewss($filter_data) . ')' : ''),
-					'href' => $this->url->link('news/ncategory', 'path=' . $this->request->get['path'] . '_' . $result['ncategory_id'] . $url)
+					'href' => $this->url->link('news/ncategory', 'npath=' . $this->request->get['npath'] . '_' . $result['ncategory_id'] . $url)
 				);
 			}
 
@@ -220,7 +220,7 @@ class Controllernewsncategory extends Controller {
 					'tax'         => $tax,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating'      => $result['rating'],
-					'href'        => $this->url->link('news/news', 'path=' . $this->request->get['path'] . '&news_id=' . $result['news_id'] . $url)
+					'href'        => $this->url->link('news/news', 'npath=' . $this->request->get['npath'] . '&news_id=' . $result['news_id'] . $url)
 				);
 			}
 
@@ -239,57 +239,57 @@ class Controllernewsncategory extends Controller {
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_default'),
 				'value' => 'p.sort_order-ASC',
-				'href'  => $this->url->link('news/ncategory', 'path=' . $this->request->get['path'] . '&sort=p.sort_order&order=ASC' . $url)
+				'href'  => $this->url->link('news/ncategory', 'npath=' . $this->request->get['npath'] . '&sort=p.sort_order&order=ASC' . $url)
 			);
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_name_asc'),
 				'value' => 'pd.name-ASC',
-				'href'  => $this->url->link('news/ncategory', 'path=' . $this->request->get['path'] . '&sort=pd.name&order=ASC' . $url)
+				'href'  => $this->url->link('news/ncategory', 'npath=' . $this->request->get['npath'] . '&sort=pd.name&order=ASC' . $url)
 			);
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_name_desc'),
 				'value' => 'pd.name-DESC',
-				'href'  => $this->url->link('news/ncategory', 'path=' . $this->request->get['path'] . '&sort=pd.name&order=DESC' . $url)
+				'href'  => $this->url->link('news/ncategory', 'npath=' . $this->request->get['npath'] . '&sort=pd.name&order=DESC' . $url)
 			);
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_price_asc'),
 				'value' => 'p.price-ASC',
-				'href'  => $this->url->link('news/ncategory', 'path=' . $this->request->get['path'] . '&sort=p.price&order=ASC' . $url)
+				'href'  => $this->url->link('news/ncategory', 'npath=' . $this->request->get['npath'] . '&sort=p.price&order=ASC' . $url)
 			);
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_price_desc'),
 				'value' => 'p.price-DESC',
-				'href'  => $this->url->link('news/ncategory', 'path=' . $this->request->get['path'] . '&sort=p.price&order=DESC' . $url)
+				'href'  => $this->url->link('news/ncategory', 'npath=' . $this->request->get['npath'] . '&sort=p.price&order=DESC' . $url)
 			);
 
 			if ($this->config->get('config_review_status')) {
 				$data['sorts'][] = array(
 					'text'  => $this->language->get('text_rating_desc'),
 					'value' => 'rating-DESC',
-					'href'  => $this->url->link('news/ncategory', 'path=' . $this->request->get['path'] . '&sort=rating&order=DESC' . $url)
+					'href'  => $this->url->link('news/ncategory', 'npath=' . $this->request->get['npath'] . '&sort=rating&order=DESC' . $url)
 				);
 
 				$data['sorts'][] = array(
 					'text'  => $this->language->get('text_rating_asc'),
 					'value' => 'rating-ASC',
-					'href'  => $this->url->link('news/ncategory', 'path=' . $this->request->get['path'] . '&sort=rating&order=ASC' . $url)
+					'href'  => $this->url->link('news/ncategory', 'npath=' . $this->request->get['npath'] . '&sort=rating&order=ASC' . $url)
 				);
 			}
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_model_asc'),
 				'value' => 'p.model-ASC',
-				'href'  => $this->url->link('news/ncategory', 'path=' . $this->request->get['path'] . '&sort=p.model&order=ASC' . $url)
+				'href'  => $this->url->link('news/ncategory', 'npath=' . $this->request->get['npath'] . '&sort=p.model&order=ASC' . $url)
 			);
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_model_desc'),
 				'value' => 'p.model-DESC',
-				'href'  => $this->url->link('news/ncategory', 'path=' . $this->request->get['path'] . '&sort=p.model&order=DESC' . $url)
+				'href'  => $this->url->link('news/ncategory', 'npath=' . $this->request->get['npath'] . '&sort=p.model&order=DESC' . $url)
 			);
 
 			$url = '';
@@ -316,7 +316,7 @@ class Controllernewsncategory extends Controller {
 				$data['limits'][] = array(
 					'text'  => $value,
 					'value' => $value,
-					'href'  => $this->url->link('news/ncategory', 'path=' . $this->request->get['path'] . $url . '&limit=' . $value)
+					'href'  => $this->url->link('news/ncategory', 'npath=' . $this->request->get['npath'] . $url . '&limit=' . $value)
 				);
 			}
 
@@ -342,7 +342,7 @@ class Controllernewsncategory extends Controller {
 			$pagination->total = $news_total;
 			$pagination->page = $page;
 			$pagination->limit = $limit;
-			$pagination->url = $this->url->link('news/ncategory', 'path=' . $this->request->get['path'] . $url . '&page={page}');
+			$pagination->url = $this->url->link('news/ncategory', 'npath=' . $this->request->get['npath'] . $url . '&page={page}');
 
 			$data['pagination'] = $pagination->render();
 
@@ -350,15 +350,15 @@ class Controllernewsncategory extends Controller {
 
 			// http://googlewebmastercentral.blogspot.com/2011/09/pagination-with-relnext-and-relprev.html
 			if ($page == 1) {
-			    $this->document->addLink($this->url->link('news/ncategory', 'path=' . $ncategory_info['ncategory_id'], 'SSL'), 'canonical');
+			    $this->document->addLink($this->url->link('news/ncategory', 'npath=' . $ncategory_info['ncategory_id'], 'SSL'), 'canonical');
 			} elseif ($page == 2) {
-			    $this->document->addLink($this->url->link('news/ncategory', 'path=' . $ncategory_info['ncategory_id'], 'SSL'), 'prev');
+			    $this->document->addLink($this->url->link('news/ncategory', 'npath=' . $ncategory_info['ncategory_id'], 'SSL'), 'prev');
 			} else {
-			    $this->document->addLink($this->url->link('news/ncategory', 'path=' . $ncategory_info['ncategory_id'] . '&page='. ($page - 1), 'SSL'), 'prev');
+			    $this->document->addLink($this->url->link('news/ncategory', 'npath=' . $ncategory_info['ncategory_id'] . '&page='. ($page - 1), 'SSL'), 'prev');
 			}
 
 			if ($limit && ceil($news_total / $limit) > $page) {
-			    $this->document->addLink($this->url->link('news/ncategory', 'path=' . $ncategory_info['ncategory_id'] . '&page='. ($page + 1), 'SSL'), 'next');
+			    $this->document->addLink($this->url->link('news/ncategory', 'npath=' . $ncategory_info['ncategory_id'] . '&page='. ($page + 1), 'SSL'), 'next');
 			}
 
 			$data['sort'] = $sort;
@@ -387,8 +387,8 @@ class Controllernewsncategory extends Controller {
 		} else {
 			$url = '';
 
-			if (isset($this->request->get['path'])) {
-				$url .= '&path=' . $this->request->get['path'];
+			if (isset($this->request->get['npath'])) {
+				$url .= '&npath=' . $this->request->get['npath'];
 			}
 
 			if (isset($this->request->get['filter'])) {

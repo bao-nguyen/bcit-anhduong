@@ -14,26 +14,26 @@ class Controllernewsnews extends Controller {
 
 		$this->load->model('catalog/ncategory');
 
-		if (isset($this->request->get['path'])) {
-			$path = '';
+		if (isset($this->request->get['npath'])) {
+			$npath = '';
 
-			$parts = explode('_', (string)$this->request->get['path']);
+			$parts = explode('_', (string)$this->request->get['npath']);
 
 			$ncategory_id = (int)array_pop($parts);
 
-			foreach ($parts as $path_id) {
-				if (!$path) {
-					$path = $path_id;
+			foreach ($parts as $npath_id) {
+				if (!$npath) {
+					$npath = $npath_id;
 				} else {
-					$path .= '_' . $path_id;
+					$npath .= '_' . $npath_id;
 				}
 
-				$ncategory_info = $this->model_catalog_ncategory->getncategory($path_id);
+				$ncategory_info = $this->model_catalog_ncategory->getncategory($npath_id);
 
 				if ($ncategory_info) {
 					$data['breadcrumbs'][] = array(
 						'text' => $ncategory_info['name'],
-						'href' => $this->url->link('news/ncategory', 'path=' . $path)
+						'href' => $this->url->link('news/ncategory', 'npath=' . $npath)
 					);
 				}
 			}
@@ -62,7 +62,7 @@ class Controllernewsnews extends Controller {
 
 				$data['breadcrumbs'][] = array(
 					'text' => $ncategory_info['name'],
-					'href' => $this->url->link('news/ncategory', 'path=' . $this->request->get['path'] . $url)
+					'href' => $this->url->link('news/ncategory', 'npath=' . $this->request->get['npath'] . $url)
 				);
 			}
 		}
@@ -161,8 +161,8 @@ class Controllernewsnews extends Controller {
 		if ($news_info) {
 			$url = '';
 
-			if (isset($this->request->get['path'])) {
-				$url .= '&path=' . $this->request->get['path'];
+			if (isset($this->request->get['npath'])) {
+				$url .= '&npath=' . $this->request->get['npath'];
 			}
 
 			if (isset($this->request->get['filter'])) {
@@ -546,8 +546,8 @@ class Controllernewsnews extends Controller {
 		} else {
 			$url = '';
 
-			if (isset($this->request->get['path'])) {
-				$url .= '&path=' . $this->request->get['path'];
+			if (isset($this->request->get['npath'])) {
+				$url .= '&npath=' . $this->request->get['npath'];
 			}
 
 			if (isset($this->request->get['filter'])) {
